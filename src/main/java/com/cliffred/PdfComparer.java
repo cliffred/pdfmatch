@@ -14,7 +14,7 @@ public class PdfComparer {
     private PdfComparer() {
     }
 
-    public static boolean equals(File doc1, File doc2) throws IOException {
+    public static boolean samePdfFile(File doc1, File doc2) throws IOException {
         try (
                 PDDocument pdDoc1 = PDDocument.load(doc1);
                 PDDocument pdDoc2 = PDDocument.load(doc2);
