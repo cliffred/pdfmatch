@@ -2,6 +2,7 @@ package com.cliffred;
 
 import org.junit.Test;
 
+import java.awt.Point;
 import java.io.File;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -21,5 +22,14 @@ public class PdfComparerTest {
 
         File diff = new File(root, "diff1.pdf");
         assertThat(PdfComparer.samePdfFile(same1, diff), is(not(true)));
+    }
+
+    @Test
+    public void testDiff() throws Exception {
+        File root = new File(this.getClass().getResource("/").toURI());
+
+        File v1 = new File(root, "v1.pdf");
+        File v2 = new File(root, "v2.pdf");
+        PdfComparer.samePdfFile(v1, v2);
     }
 }
