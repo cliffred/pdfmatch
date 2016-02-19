@@ -12,6 +12,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import javafx.application.Application;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
@@ -83,7 +84,7 @@ public class PdfComparer {
                     }
                 }
             }
-
+            
             List<ClusterSquare> squares = new ArrayList<>();
             for (Point point : diffPoints) {
                 if (!addToExisting(squares, point)) {
