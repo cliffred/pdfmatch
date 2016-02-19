@@ -84,7 +84,7 @@ public class PdfComparer {
                     }
                 }
             }
-            
+
             List<ClusterSquare> squares = new ArrayList<>();
             for (Point point : diffPoints) {
                 if (!addToExisting(squares, point)) {

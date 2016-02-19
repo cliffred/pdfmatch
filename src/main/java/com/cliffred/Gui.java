@@ -15,10 +15,8 @@ import javafx.stage.Stage;
 
 public class Gui extends Application {
 
-    Image image;
-
-    public Gui(BufferedImage bim) {
-        image = SwingFXUtils.toFXImage(bim, null);
+    public static void main(String[] args) {
+        launch(args);
     }
 
     @Override
@@ -27,6 +25,12 @@ public class Gui extends Application {
         GraphicsContext gc2 = layer2.getGraphicsContext2D();
 
         gc2.setFill(Color.BLUE);
+
+        BufferedImage bim = new BufferedImage(200, 200, BufferedImage.TYPE_INT_RGB);
+        for (int i = 0; i < 200; i++) {
+            bim.setRGB(10, i, 200);
+        }
+        Image image = SwingFXUtils.toFXImage(bim, null);
 
         Pane root = new Pane(new ImageView(image), layer2);
         Scene scene = new Scene(root);
